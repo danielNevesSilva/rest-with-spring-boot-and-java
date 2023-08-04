@@ -1,9 +1,9 @@
-package br.com.eudio.apigateway.unittestes.mepper;
+package br.com.erudio.apigateway.unittestes.mepper;
 
-import br.com.eudio.apigateway.mapper.DozerMapper;
-import br.com.eudio.apigateway.model.Person;
-import br.com.eudio.apigateway.unittestes.mapper.mocks.MockPerson;
-import br.com.eudio.apigateway.vo.v1.PersonVO;
+import br.com.erudio.apigateway.mapper.DozerMapper;
+import br.com.erudio.apigateway.model.Person;
+import br.com.erudio.apigateway.unittestes.mapper.mocks.MockPerson;
+import br.com.erudio.apigateway.vo.v1.PersonVO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +23,7 @@ public class DozerConverterTest {
     @Test
     public void parseEntityToVOTest() {
         PersonVO output = DozerMapper.parseObject(inputObject.mockEntity(), PersonVO.class);
-        assertEquals(Long.valueOf(0L), output.getId());
+        assertEquals(Long.valueOf(0L), output.getKey());
         assertEquals("First Name Test0", output.getFirtName());
         assertEquals("Last Name Test0", output.getLastName());
         assertEquals("Addres Test0", output.getAddress());
@@ -35,7 +35,7 @@ public class DozerConverterTest {
         List<PersonVO> outputList = DozerMapper.parseListObjects(inputObject.mockEntityList(), PersonVO.class);
         PersonVO outputZero = outputList.get(0);
 
-        assertEquals(Long.valueOf(0L), outputZero.getId());
+        assertEquals(Long.valueOf(0L), outputZero.getKey());
         assertEquals("First Name Test0", outputZero.getFirtName());
         assertEquals("Last Name Test0", outputZero.getLastName());
         assertEquals("Addres Test0", outputZero.getAddress());
@@ -43,7 +43,7 @@ public class DozerConverterTest {
 
         PersonVO outputSeven = outputList.get(7);
 
-        assertEquals(Long.valueOf(7L), outputSeven.getId());
+        assertEquals(Long.valueOf(7L), outputSeven.getKey());
         assertEquals("First Name Test7", outputSeven.getFirtName());
         assertEquals("Last Name Test7", outputSeven.getLastName());
         assertEquals("Addres Test7", outputSeven.getAddress());
@@ -51,7 +51,7 @@ public class DozerConverterTest {
 
         PersonVO outputTwelve = outputList.get(12);
 
-        assertEquals(Long.valueOf(12L), outputTwelve.getId());
+        assertEquals(Long.valueOf(12L), outputTwelve.getKey());
         assertEquals("First Name Test12", outputTwelve.getFirtName());
         assertEquals("Last Name Test12", outputTwelve.getLastName());
         assertEquals("Addres Test12", outputTwelve.getAddress());
