@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/person/v1")
-@Tag(name = "People", description = "Endpoites for managing People")
+@Tag(name = "People", description = "Endpoits for managing People")
 public class PersonController {
         @Autowired
         private PersonServices service;
@@ -46,6 +46,7 @@ public class PersonController {
             return service.findAll();
         }
 
+        @CrossOrigin(origins = "http://localhost:8080")
         @GetMapping(value = "/{id}",
                 produces = { MediaType.APPLICATION_JSON,
                         MediaType.APPLICATION_XML,
@@ -67,6 +68,7 @@ public class PersonController {
             return service.findById(id);
         }
 
+        @CrossOrigin(origins = {"http://localhost:8080","https://erudio.com.br"})
         @PostMapping(consumes = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML },
                 produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML })
         @Operation(summary = "Adds a new Person", description = "Adds a new Person",
