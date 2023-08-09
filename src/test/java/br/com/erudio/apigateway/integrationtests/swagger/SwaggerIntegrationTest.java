@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
 import br.com.erudio.apigateway.configs.TestConfigs;
-import br.com.erudio.apigateway.integrationtests.testecontainers.AbstractIntegrationTest;
+import br.com.erudio.apigateway.integrationtests.testcontainers.AbstractIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,7 +1,7 @@
 package br.com.erudio.apigateway.integrationtests.controller.withjson;
 
 import br.com.erudio.apigateway.configs.TestConfigs;
-import br.com.erudio.apigateway.integrationtests.testecontainers.AbstractIntegrationTest;
+import br.com.erudio.apigateway.integrationtests.testcontainers.AbstractIntegrationTest;
 import br.com.erudio.apigateway.integrationtests.vo.PersonVO;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;

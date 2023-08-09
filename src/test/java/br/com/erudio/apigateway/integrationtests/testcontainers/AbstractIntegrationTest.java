@@ -1,4 +1,4 @@
-package br.com.erudio.apigateway.integrationtests.testecontainers;
+package br.com.erudio.apigateway.integrationtests.testcontainers;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -16,7 +16,7 @@ public class AbstractIntegrationTest {
 
     static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-        static MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8.0.29");
+        static MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8.0.34");
 
         private static void startContainers() {
             Startables.deepStart(Stream.of(mysql)).join();
